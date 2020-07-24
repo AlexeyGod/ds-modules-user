@@ -11,14 +11,11 @@ use framework\components\module\ModuleComponent;
 
 class UserModule extends ModuleComponent
 {
-    //ublic $routes = [
-    //   'manager/user/list' => '/user/manager-users',
-    //   'manager/user/accepts' => '/user/manager-accepts',
-    //   'manager/user/accepts/create' => '/user/manager-accepts/create',
-    //   'manager/user/accepts/<action:update|delete>/<id:\d+>' => '/user/manager-accepts/<action>',
-    //   'manager/user/create' => '/user/manager-users/create',
-    //   'manager/user/<action:pw|update|delete>/<id:\d+>' => '/user/manager-users/<action>',
-    //;
+    public function __construct($options = [])
+    {
+        Application::setAlias('@modules/user', __DIR__);
+        return parent::__construct($options);
+    }
 
     protected $_menu = [
         'accept' => 'user-manager',
